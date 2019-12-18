@@ -69,6 +69,9 @@ import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.nullable;
 import static org.mockito.Mockito.when;
 
+/**
+ * 消息生产者
+ */
 @RunWith(MockitoJUnitRunner.class)
 public class DefaultMQProducerTest {
     @Spy
@@ -78,6 +81,12 @@ public class DefaultMQProducerTest {
     @Mock
     private NettyRemotingClient nettyRemotingClient;
 
+    /**
+     * 生产者的门面
+     *
+     * 大部分业务逻辑的实现在 {@link DefaultMQProducerImpl} 中
+     *
+     */
     private DefaultMQProducer producer;
     private Message message;
     private Message zeroMsg;
